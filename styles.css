@@ -1,0 +1,331 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&family=Outfit:wght@400;600;700&display=swap');
+
+/* Root Variables for easy theming */
+:root {
+  --white: hsl(0, 0%, 100%);
+  --stone-100: hsl(30, 54%, 90%);
+  --stone-150: hsl(30, 18%, 87%);
+  --stone-600: hsl(30, 10%, 34%);
+  --stone-900: hsl(24, 5%, 18%);
+  --brown-800: hsl(14, 45%, 36%);
+  --rose-800: hsl(332, 51%, 32%);
+  --rose-50: hsl(330, 100%, 98%);
+  --font-body: 'Outfit', sans-serif;
+  --font-heading: 'Young Serif', serif;
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--stone-900);
+  background-color: var(--stone-100);
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Container */
+.container {
+  background: var(--white);
+  max-width: 600px;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Recipe Image */
+.recipe-image img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Recipe Title */
+h1 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 400;
+  margin: 15px 0;
+}
+
+/* Subheadings */
+h3 {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  color: var(--brown-800);
+  margin-bottom: 10px;
+}
+
+/* Preparation Time Box */
+#time {
+  background: var(--rose-50);
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 5px solid var(--rose-800);
+  margin: 20px 20px;
+}
+
+#time h3 {
+  color: var(--rose-800);
+}
+
+#time .prep {
+  color: var(--stone-900);
+}
+
+#time li {
+  padding: 5px 0;
+}
+
+/* Colored Bullet Points */
+.bullets li::marker {
+  color: var(--brown-800); 
+  font-size: 1em; 
+}
+
+/* Ingredients & Instructions */
+ul, ol {
+  padding-left: 20px;
+}
+
+li {
+  padding: 5px 0;
+}
+
+
+/* Style Ordered List (Instructions) */
+ol {
+  counter-reset: list-counter;
+}
+
+ol li {
+  counter-increment: list-counter;
+  list-style: none;
+  position: relative;
+  padding-left: 30px;
+}
+
+ol li::before {
+  content: counter(list-counter) ".";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--brown-800);
+}
+
+/* Horizontal Line */
+hr {
+  border: 1px solid var(--stone-150);
+  margin: 20px 0;
+}
+
+/* Nutrition Section */
+.sub {
+  margin-bottom: 5px;
+}
+
+
+.nutrition-info {
+  font-size: 14px;
+  color: var(--stone-600);
+  margin-bottom: 15px; 
+  display: block; 
+  width: 100%; 
+}
+
+/* Nutrition Section */
+.nutrition {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Style Each Row */
+.nutrition-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--stone-150);
+}
+/* Remove border from last row */
+.nutrition-row:last-child {
+  border-bottom: none;
+}
+
+/* Style Labels */
+.nutrition .label {
+  color: var(--stone-600);
+  font-weight: 600;
+  flex: 1;
+  text-align: left;
+  padding-left: 30px;
+}
+
+/* Style Values */
+.nutrition .value {
+  color: var(--brown-800);
+  font-weight: bold;
+  flex: 1;
+  text-align: left;
+}
+
+/* Style Nutrition Labels */
+.nutrition .label {
+  color: var(--stone-600);
+  font-weight: 600;
+}
+
+/* Style Nutrition Values */
+.nutrition .value {
+  color: var(--brown-800);
+  font-weight: bold;
+}
+
+
+/* Attribution Bookmark Style */
+.attribution {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--stone-150);
+  color: transparent;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-left: 5px solid var(--brown-800);
+  border-radius: 5px;
+  text-align: center;
+  max-width: 180px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 23px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* Hover Effect: Reveal Text */
+.attribution:hover {
+  background: var(--stone-100);
+}
+
+/* Hidden Spans for Split Animation */
+.attribution span:nth-child(1),
+.attribution span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--stone-900);
+  transition: 0.5s;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+  overflow: hidden;
+}
+
+.attribution:hover span:nth-child(1) {
+  transform: translateY(-10px);
+}
+
+.attribution span:nth-child(2) {
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+}
+
+.attribution:hover span:nth-child(2) {
+  transform: translateY(10px);
+}
+
+/* Reveal Last Span */
+.attribution span:nth-child(3) {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) scaleY(0);
+  width: 100%;
+  color: var(--stone-900);
+  background: var(--rose-50);
+  font-size: 0.8em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-align: center;
+  padding: 5px;
+  transition: 0.5s;
+}
+
+.attribution:hover span:nth-child(3) {
+  transform: translateY(-50%) scaleY(1);
+}
+
+/* Style Attribution Links */
+.attribution a {
+  color: var(--brown-800);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hover Effect for Links */
+.attribution a:hover {
+  color: var(--rose-800);
+  text-decoration: underline;
+}
+
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .container {
+    max-width: 700px;
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  .nutrition th, .nutrition td {
+    padding: 12px;
+  }
+  .attribution {
+    position: fixed;
+    right: 10px;
+    top: auto;
+    bottom: 20px;
+    transform: none; 
+    width: auto;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .attribution {
+    position: fixed;
+    right: 10px; 
+    top: auto;
+    bottom: 20px; 
+    transform: none;
+    width: auto;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+}
