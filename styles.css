@@ -106,7 +106,7 @@ li {
 }
 
 
-/* Style Ordered List (Instructions) */
+/* Ordered List (Instructions) */
 ol {
   counter-reset: list-counter;
 }
@@ -153,7 +153,7 @@ hr {
   margin-top: 10px;
 }
 
-/* Style Each Row */
+/* Each Row */
 .nutrition-row {
   display: flex;
   align-items: center;
@@ -183,20 +183,20 @@ hr {
   text-align: left;
 }
 
-/* Style Nutrition Labels */
+/* Nutrition Labels */
 .nutrition .label {
   color: var(--stone-600);
   font-weight: 600;
 }
 
-/* Style Nutrition Values */
+/* Nutrition Values */
 .nutrition .value {
   color: var(--brown-800);
   font-weight: bold;
 }
 
 
-/* Attribution Bookmark Style */
+/* Attribution */
 .attribution {
   position: absolute;
   right: 0px;
@@ -272,7 +272,7 @@ hr {
   transform: translateY(-50%) scaleY(1);
 }
 
-/* Style Attribution Links */
+/* Attribution Links */
 .attribution a {
   color: var(--brown-800);
   text-decoration: none;
